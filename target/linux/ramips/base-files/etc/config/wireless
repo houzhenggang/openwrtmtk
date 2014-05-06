@@ -1,0 +1,31 @@
+
+config wifi-device 'ra0'
+	option type 'ralink'
+	option mode '9'
+	option ht '40'
+	option hidessid '0'
+	option macpolicy '0'
+	option maclist ' '
+	option disabled '0'
+	option txpower '17'
+	option channel '6'
+
+config wifi-iface
+	option device 'ra0'
+	option ifname 'ra0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'zc'
+	option key '1'
+	option key1 's:12345'
+	option encryption 'wep-open'
+
+config wds-iface 'wds'
+	option enable '0'
+	option stat '0'
+	option device 'apcli0'
+	option channel '11'
+	option authmode 'open'
+	option encryptype 'none'
+	option defaultkeyid '1'
+
