@@ -1,0 +1,42 @@
+Index: linux-3.10.36/drivers/mtd/Kconfig
+===================================================================
+--- linux-3.10.36.orig/drivers/mtd/Kconfig	2014-05-05 23:30:31.937196045 +0800
++++ linux-3.10.36/drivers/mtd/Kconfig	2014-05-06 00:00:51.589127720 +0800
+@@ -395,4 +395,5 @@
+ 
+ source "drivers/mtd/ubi/Kconfig"
+ 
++source "drivers/mtd/ralink/Kconfig"
+ endif # MTD
+Index: linux-3.10.36/drivers/mtd/Makefile
+===================================================================
+--- linux-3.10.36.orig/drivers/mtd/Makefile	2014-05-05 23:32:35.701191397 +0800
++++ linux-3.10.36/drivers/mtd/Makefile	2014-05-05 23:33:04.177190618 +0800
+@@ -33,6 +33,7 @@
+ obj-$(CONFIG_SM_FTL)		+= sm_ftl.o
+ obj-$(CONFIG_MTD_OOPS)		+= mtdoops.o
+ obj-$(CONFIG_MTD_SWAP)		+= mtdswap.o
++obj-$(CONFIG_MTD_RALINK)        += ralink/
+ 
+ nftl-objs		:= nftlcore.o nftlmount.o
+ inftl-objs		:= inftlcore.o inftlmount.o
+Index: linux-3.10.36/drivers/net/wireless/Kconfig
+===================================================================
+--- linux-3.10.36.orig/drivers/net/wireless/Kconfig	2014-05-05 23:33:33.753189216 +0800
++++ linux-3.10.36/drivers/net/wireless/Kconfig	2014-05-06 00:09:47.893107630 +0800
+@@ -280,5 +280,6 @@
+ source "drivers/net/wireless/ti/Kconfig"
+ source "drivers/net/wireless/zd1211rw/Kconfig"
+ source "drivers/net/wireless/mwifiex/Kconfig"
++source "drivers/net/wireless/rt2860v2_ap/Kconfig"
+ 
+ endif # WLAN
+Index: linux-3.10.36/drivers/net/wireless/Makefile
+===================================================================
+--- linux-3.10.36.orig/drivers/net/wireless/Makefile	2014-05-05 23:34:15.373187654 +0800
++++ linux-3.10.36/drivers/net/wireless/Makefile	2014-05-06 00:10:07.257106506 +0800
+@@ -57,3 +57,4 @@
+ 
+ obj-$(CONFIG_BRCMFMAC)	+= brcm80211/
+ obj-$(CONFIG_BRCMSMAC)	+= brcm80211/
++obj-$(CONFIG_RT2860V2_AP) += rt2860v2_ap/
